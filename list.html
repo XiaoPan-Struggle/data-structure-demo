@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const createList = (value) => {
+        return createNode(value)
+      }
+
+      const appendList = (list, value) => {
+        const node = createNode(value)
+        let x = list // 初始化为需要操作的那个节点
+        while (x.next) {
+          x = x.next
+        }
+      }
+      // 创建节点
+      const createNode = (value) => {
+        return {
+          data: value,
+          next: null,
+        }
+      }
+    </script>
+  </body>
+</html>
