@@ -10,7 +10,6 @@
       const createList = (value) => {
         return createNode(value)
       }
-
       // 给最后一个节点新增节点
       const appendList = (list, value) => {
         const node = createNode(value)
@@ -23,6 +22,22 @@
         x.next = node
         return node
       }
+      // 遍历节点
+      /* 
+        接收需要操作的节点和一个操作函数
+      */
+      const travelList = (list, fn) => {
+        let x = list // 复制一份进行操作
+        while (x !== null) {
+          // 当不是最后一个节点时
+          fn(x) // 执行操作
+          x = x.next // 将x赋值为 当前节点的下一个节点
+        }
+      }
+      travelList(list, (node) => {
+        console.log(node.data)
+      })
+
       // 创建节点
       const createNode = (value) => {
         return {
