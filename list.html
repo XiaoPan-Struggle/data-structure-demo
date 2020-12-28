@@ -11,12 +11,17 @@
         return createNode(value)
       }
 
+      // 给最后一个节点新增节点
       const appendList = (list, value) => {
         const node = createNode(value)
         let x = list // 初始化为需要操作的那个节点
         while (x.next) {
+          // 当当前节点还有节点时，就把x赋值为当前节点的节点
           x = x.next
         }
+        // 当x.next === null 时，x就是最后一个节点了
+        x.next = node
+        return node
       }
       // 创建节点
       const createNode = (value) => {
