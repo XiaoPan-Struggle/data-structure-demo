@@ -33,3 +33,16 @@ const travel = (tree) => {
     travel(tree.children[i])
   }
 }
+
+//删除节点
+const removeNode = (tree,node) => {
+  const siblings = node.parent.children
+  let index = 0 // 假设第一个就是需要删除的node
+  for(let i = 1; i < siblings.length; i++) {
+    //相等就是要删除的那个
+    if(siblings[i] === node) {
+      index = i
+    }
+  }
+  siblings.splice(index,1)
+}
