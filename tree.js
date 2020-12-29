@@ -20,3 +20,16 @@ const addChild = (node,value) => {
   node.children.push(newNode)
   return newNode
 }
+
+// 查看节点
+const travel = (tree) => {
+  console.log(tree.data)
+  // 最底层就结束
+  if(!tree.children) {
+    return
+  }
+  for(let i = 0; i < tree.children.length; i++) {
+    // 一层一层查询，直到最后一层
+    travel(tree.children[i])
+  }
+}
